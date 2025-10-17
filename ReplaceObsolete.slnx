@@ -5,6 +5,7 @@
   <Project Path="ReplaceObsolete.CodeFixes/ReplaceObsolete.CodeFixes.csproj" />
   <Project Path="ReplaceObsolete.Package/ReplaceObsolete.Package.csproj" />
   <Project Path="ReplaceObsolete.Test/ReplaceObsolete.Test.csproj" />
-  <Project Path="ReplaceObsolete.Vsix/ReplaceObsolete.Vsix.csproj" />
-  <Project Path="ReplaceObsolete/ReplaceObsolete.csproj" />
+  <Project Path="ReplaceObsolete/ReplaceObsolete.csproj">
+    <BuildType Project="Release" />
+  </Project>
 </Solution>

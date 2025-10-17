@@ -23,7 +23,7 @@
 		<PackageProjectUrl>https://github.com/NavneetHegde/ReplaceObsoleteAnalyzer</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/NavneetHegde/ReplaceObsoleteAnalyzer</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
-		<PackageIcon>icon.png</PackageIcon>
+		<PackageIcon>Icon.png</PackageIcon>
 		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
 
 		<!-- Build and Packaging Settings -->
@@ -35,6 +35,11 @@
 			$(TargetsForTfmSpecificContentInPackage);_AddAnalyzersToOutput
 		</TargetsForTfmSpecificContentInPackage>
 	</PropertyGroup>
+
+	<ItemGroup>
+		<!-- Ensure icon is packed -->
+		<None Include="Icon.png" Pack="true" PackagePath="" />
+	</ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\ReplaceObsolete.CodeFixes\ReplaceObsolete.CodeFixes.csproj" />
