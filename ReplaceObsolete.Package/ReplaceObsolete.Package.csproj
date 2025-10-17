@@ -1,0 +1,55 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <SuppressDependenciesWhenPacking>true</SuppressDependenciesWhenPacking>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+	<PropertyGroup>
+		<!-- Basic Package Info -->
+		<PackageId>ReplaceObsoleteAnalyzer</PackageId>
+		<Version>1.0.0</Version>
+		<Authors>Navneet Hegde</Authors>
+		<Company>Navneet Hegde</Company>
+		<Description>A Roslyn analyzer and code fix provider that detects obsolete members and replaces them with their suggested alternatives.</Description>
+		<PackageTags>roslyn, analyzer, codefix, obsolete, maintainability</PackageTags>
+		<PackageReleaseNotes>Initial release of ReplaceObsoleteAnalyzer.</PackageReleaseNotes>
+		<Copyright>© 2025 Navneet Hegde</Copyright>
+
+		<!-- Licensing and Metadata -->
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageProjectUrl>https://github.com/NavneetHegde/ReplaceObsoleteAnalyzer</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/NavneetHegde/ReplaceObsoleteAnalyzer</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<PackageIcon>icon.png</PackageIcon>
+		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+
+		<!-- Build and Packaging Settings -->
+		<DevelopmentDependency>true</DevelopmentDependency>
+		<NoPackageAnalysis>true</NoPackageAnalysis>
+
+		<!-- Ensure analyzer DLLs are included -->
+		<TargetsForTfmSpecificContentInPackage>
+			$(TargetsForTfmSpecificContentInPackage);_AddAnalyzersToOutput
+		</TargetsForTfmSpecificContentInPackage>
+	</PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ReplaceObsolete.CodeFixes\ReplaceObsolete.CodeFixes.csproj" />
+    <ProjectReference Include="..\ReplaceObsolete\ReplaceObsolete.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="tools\*.ps1" CopyToOutputDirectory="PreserveNewest" Pack="true" PackagePath="" />
+  </ItemGroup>
+
+  <Target Name="_AddAnalyzersToOutput">
+    <ItemGroup>
+      <TfmSpecificPackageFile Include="$(OutputPath)\ReplaceObsolete.dll" PackagePath="analyzers/dotnet/cs" />
+      <TfmSpecificPackageFile Include="$(OutputPath)\ReplaceObsolete.CodeFixes.dll" PackagePath="analyzers/dotnet/cs" />
+    </ItemGroup>
+  </Target>
+
+</Project>
