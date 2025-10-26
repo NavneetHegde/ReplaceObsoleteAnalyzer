@@ -10,7 +10,7 @@
 	<PropertyGroup>
 		<!-- Basic Package Info -->
 		<PackageId>ReplaceObsoleteAnalyzer</PackageId>
-		<Version>1.0.1</Version>
+		<Version>1.0.2</Version>
 		<Authors>Navneet Hegde</Authors>
 		<Company>Navneet Hegde</Company>
 		<Description>A Roslyn analyzer and code fix provider that detects obsolete members and replaces them with their suggested alternatives.</Description>
