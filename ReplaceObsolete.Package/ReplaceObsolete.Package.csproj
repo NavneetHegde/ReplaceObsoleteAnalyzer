@@ -10,7 +10,7 @@
 	<PropertyGroup>
 		<!-- Basic Package Info -->
 		<PackageId>ReplaceObsoleteAnalyzer</PackageId>
-		<Version>1.0.0</Version>
+		<Version>1.0.1</Version>
 		<Authors>Navneet Hegde</Authors>
 		<Company>Navneet Hegde</Company>
 		<Description>A Roslyn analyzer and code fix provider that detects obsolete members and replaces them with their suggested alternatives.</Description>
@@ -37,8 +37,10 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<!-- Ensure icon is packed -->
+		<!-- README, LICENSE, and icon from solution root -->
 		<None Include="Icon.png" Pack="true" PackagePath="" />
+		<None Include="..\README.md" Pack="true" PackagePath="\" />
+		<None Include="..\LICENSE" Pack="true" PackagePath="\" />
 	</ItemGroup>
 
   <ItemGroup>
